@@ -27,6 +27,10 @@ export const HomeContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  max-width: 435px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   box-shadow:
     inset 0 30px 30px rgba(247, 247, 247, 1),
     inset 0 -30px 30px rgba(247, 247, 247, 1);
@@ -58,7 +62,6 @@ export const TopCurveTextElem = styled.span`
 export const HomeHeading = styled.span`
   font-family: var(--font-display);
   font-size: 3rem;
-  margin-top: 1.75em;
   text-align: center;
   margin-bottom: 0;
   line-height: 1em;
@@ -72,14 +75,14 @@ export const HomeTitle = styled.h1`
 `;
 
 export const HomeMiddleText = styled.span`
-  margin: 1.25rem 0;
+  margin: 0;
 `;
 
 export const HomeBottomText = styled.a`
   font-family: var(--font-mono);
   font-weight: 500;
   text-align: center;
-  margin: 1.5rem 0 0 0;
+  margin: 0;
   font-size: 0.875rem;
   text-decoration: none;
   font-style: italic;
@@ -151,4 +154,29 @@ export const FormButton = styled.button`
   background: var(--color-primary-light);
   border: 1px solid var(--color-primary);
   border-radius: 5px;
+`;
+
+export const HomeLander = styled.div`
+  height: 57vh;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5rem;
+`;
+
+export const FullScreenText = styled.div`
+  height: 100dvh;
+  width: 100dvw;
+  background-color: black;
+  color: white;
+  position: fixed;
+  padding: 0 20vw;
+  display: none;
+  z-index: 999;
+  place-items: center;
+  @media (min-width: 650px) {
+    display: grid;
+  }
 `;

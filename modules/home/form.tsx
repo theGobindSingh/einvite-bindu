@@ -41,7 +41,7 @@ export default function MyCustomGForm() {
     <Form onSubmit={onSubmit} ref={ref}>
       <FormUpperContainer>
         <label htmlFor="bP_Lc">Name</label>
-        <input type="text" id="bP_Lc" className="input" />
+        <input type="text" id="bP_Lc" className="input" required />
       </FormUpperContainer>
       <FormLowerContainer>
         <label htmlFor="zQqCD" className="label adult">
@@ -54,6 +54,7 @@ export default function MyCustomGForm() {
           min={1}
           defaultValue={1}
           step={1}
+          required
         />
         <label htmlFor="zQvCD" className="label child">
           Children
@@ -65,6 +66,7 @@ export default function MyCustomGForm() {
           min={0}
           defaultValue={0}
           step={1}
+          required
         />
       </FormLowerContainer>
       <FormButton type="submit">Submit</FormButton>

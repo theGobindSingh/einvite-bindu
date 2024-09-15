@@ -157,7 +157,7 @@ export const FormButton = styled.button`
 `;
 
 export const HomeLander = styled.div`
-  height: 57vh;
+  height: 57.5dvh;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;

@@ -1,5 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useEasyGoogleForm } from '@hymns-of-web/use-easy-google-form';
+import {
+  Form,
+  FormButton,
+  FormLowerContainer,
+  FormUpperContainer,
+} from '@modules/home/styles';
 import { useRef } from 'react';
 
 export default function MyCustomGForm() {
@@ -32,14 +38,36 @@ export default function MyCustomGForm() {
     onSubmitExtra,
   });
   return (
-    <form onSubmit={onSubmit} ref={ref}>
-      <label htmlFor="bP_Lc">Name</label>
-      <input type="text" id="bP_Lc" />
-      <label htmlFor="zQqCD">adult</label>
-      <input type="text" id="zQqCD" />
-      <label htmlFor="zQvCD">children</label>
-      <input type="text" id="zQvCD" />
-      <button type="submit">Submit</button>
-    </form>
+    <Form onSubmit={onSubmit} ref={ref}>
+      <FormUpperContainer>
+        <label htmlFor="bP_Lc">Name</label>
+        <input type="text" id="bP_Lc" className="input" />
+      </FormUpperContainer>
+      <FormLowerContainer>
+        <label htmlFor="zQqCD" className="label adult">
+          Adults
+        </label>
+        <input
+          type="number"
+          id="zQqCD"
+          className="input adult"
+          min={1}
+          defaultValue={1}
+          step={1}
+        />
+        <label htmlFor="zQvCD" className="label child">
+          Children
+        </label>
+        <input
+          type="number"
+          id="zQvCD"
+          className="input child"
+          min={0}
+          defaultValue={0}
+          step={1}
+        />
+      </FormLowerContainer>
+      <FormButton type="submit">Submit</FormButton>
+    </Form>
   );
 }

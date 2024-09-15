@@ -32,13 +32,19 @@ const globalStyles = css`
     --font-display: ${fontDisplay.style.fontFamily};
     --font-cursive: ${fontCursive.style.fontFamily};
     --font-mono: ${fontMono.style.fontFamily};
+    --color-primary: rgba(140, 145, 120, 1);
+    --color-primary-light: hsla(72, 10.5%, 80%, 1);
+    --color-primary-dark: hsla(72, 10.5%, 20%, 1);
   }
   body {
-    color: rgba(140, 145, 120, 1);
+    color: var(--color-primary);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: var(--font-sans-serif);
+  }
+  * {
+    box-sizing: border-box;
   }
 `;
 

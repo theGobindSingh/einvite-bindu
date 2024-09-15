@@ -91,3 +91,64 @@ export const HomeImageContainer = styled.div`
   height: 40px;
   width: 40px;
 `;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 20px;
+  margin-bottom: 2rem;
+  .input {
+    padding: 6px 8px;
+    &:focus {
+      border: 1px solid var(--color-primary-dark);
+      outline: 0;
+    }
+  }
+`;
+
+export const FormUpperContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  .input {
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+  }
+`;
+
+export const FormLowerContainer = styled.div`
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  row-gap: 8px;
+  grid-template-areas:
+    't1 t2'
+    'b1 b2';
+  .label.adult {
+    grid-area: t1;
+  }
+  .label.child {
+    grid-area: t2;
+  }
+  .input {
+    width: 100%;
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    &.adult {
+      grid-area: b1;
+    }
+    &.child {
+      grid-area: b2;
+    }
+  }
+`;
+
+export const FormButton = styled.button`
+  width: 100%;
+  padding: 6px 8px;
+  background: var(--color-primary-light);
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+`;

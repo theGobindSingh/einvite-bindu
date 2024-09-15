@@ -3,7 +3,12 @@ import { useEasyGoogleForm } from '@hymns-of-web/use-easy-google-form';
 import { useRef } from 'react';
 
 export default function MyCustomGForm() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLFormElement>(null);
+
+  const onSubmitExtra = () => {
+    ref.current?.reset();
+  };
+
   const onSubmit = useEasyGoogleForm({
     formRef: ref,
     gFormId: '1rIfXQTvwg7mkLcwFg-vVy48aCtN60PSVTD2lrHSZVQ8',
@@ -24,6 +29,7 @@ export default function MyCustomGForm() {
         type: 'text',
       },
     ],
+    onSubmitExtra,
   });
   return (
     <form onSubmit={onSubmit} ref={ref}>
